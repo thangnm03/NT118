@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_dish"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/sample_dish"/>
+        <TextView
+            android:id="@+id/tx_dish"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/img_dish"
+            android:text="sample dish"
+            android:textSize="20dp"
+            android:padding="20dp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <ImageView
+            android:id="@+id/btn_remove"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_remove_circle_24"
+            android:contentDescription="Remove Button"
+            android:foregroundGravity="center" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
