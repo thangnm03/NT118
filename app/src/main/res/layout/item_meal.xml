@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+        <ImageView
+            android:id="@+id/img_meal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Image Dish"
+            android:src="@drawable/sample_dish" />
+    </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/name_dish"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:text="Sample Dish"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_fav"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/name_dish"
+                android:background="@drawable/toggle_selector"
+                android:onClick="onCustomToggleClick"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+</LinearLayout>
