@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".login">
+=======
+    tools:context=".Home">
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     <TextView
         android:id="@+id/tv_login"
         android:layout_width="match_parent"
@@ -86,6 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/et_pwd"
+<<<<<<< HEAD
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -95,6 +100,16 @@
         android:textSize="20dp"
         android:background="@drawable/background_button"
         />
+=======
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="Login"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -124,7 +139,11 @@
             android:textColor="@android:color/darker_gray"/>
 
         <ImageButton
+<<<<<<< HEAD
             android:id="@+id/imgbtn_google"
+=======
+            android:id="@+id/ibtn_google"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_marginRight="60dp"

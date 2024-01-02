@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+<<<<<<< HEAD
     android:orientation="vertical">
 
     <FrameLayout
@@ -25,3 +30,25 @@
          />
 
 </LinearLayout>
+=======
+    android:orientation="vertical"
+    android:id="@+id/main">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_menu"
+        android:contentDescription="@string/app_name" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:id="@+id/bottom_menu"
+        />
+
+</RelativeLayout>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132

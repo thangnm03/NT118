@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/signup"
+<<<<<<< HEAD
     tools:context=".login">
+=======
+    tools:context=".Home">
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
     <ImageButton
         android:id="@+id/ibtn_back"
@@ -30,7 +34,12 @@
         android:drawableTint="@android:color/darker_gray"
         android:paddingStart="10dp"
         android:singleLine="true"
+<<<<<<< HEAD
         tools:ignore="TouchTargetSizeCheck"/>
+=======
+        tools:ignore="TouchTargetSizeCheck"
+        />
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     <TextView
         android:id="@+id/warn_name"
         android:layout_width="wrap_content"
@@ -40,7 +49,11 @@
         android:textColor="@android:color/holo_red_light"
         android:text="Name cannot be left blank"
         android:visibility="gone"
+<<<<<<< HEAD
         />
+=======
+        android:inputType="textEmailAddress"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
     <EditText
         android:id="@+id/et_mail"
@@ -87,7 +100,12 @@
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/warn_mail"
         android:background="@drawable/border_card"
+<<<<<<< HEAD
         android:layout_marginTop="10dp"/>
+=======
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     <TextView
         android:id="@+id/warn_pwd"
         android:layout_width="wrap_content"
@@ -114,7 +132,12 @@
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/warn_pwd"
         android:background="@drawable/border_card"
+<<<<<<< HEAD
         android:layout_marginTop="10dp"/>
+=======
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     <TextView
         android:id="@+id/warn_cf_pwd"
         android:layout_width="wrap_content"
@@ -127,7 +150,11 @@
         />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/btn_login"
+=======
+        android:id="@+id/btn_signup"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/warn_cf_pwd"
@@ -139,7 +166,11 @@
         android:gravity="center"
         android:textSize="20dp"
         android:background="@drawable/border_card"
+<<<<<<< HEAD
         android:textColor="@android:color/darker_gray"
         />
+=======
+        android:enabled="false"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
 </RelativeLayout>

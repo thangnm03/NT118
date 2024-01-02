@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.INTERNET"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
     <application
         android:allowBackup="true"
@@ -13,7 +17,14 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".login"
+=======
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
             android:exported="false" />
         <activity
             android:name=".MainActivity"

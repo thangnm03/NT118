@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="50dp"
+=======
+    android:layout_height="wrap_content"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     android:orientation="horizontal"
     android:weightSum="5">
 
@@ -9,13 +13,29 @@
         android:id="@+id/tx_ingredient"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+<<<<<<< HEAD
         android:layout_weight="3.5" />
+=======
+        android:layout_weight="3.5"
+        android:text="Sample ingredient"
+        android:textSize="20dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
     <TextView
         android:id="@+id/tx_amount"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
+<<<<<<< HEAD
         android:gravity="center"/>
+=======
+        android:gravity="center"
+        android:text="1 amount"
+        android:textSize="20dp"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
 </LinearLayout>

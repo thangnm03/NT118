@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<<<<<<< HEAD
+=======
+    <color name="bright_pink">#DE3163</color>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 </resources>

@@ -10,7 +10,14 @@
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
+<<<<<<< HEAD
             android:layout_marginStart="20dp"/>
+=======
+            android:layout_marginStart="20dp"
+            android:text="Bữa sáng"
+            android:padding="10dp"
+            android:textSize="20dp"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

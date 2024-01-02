@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="50dp"
+=======
+    android:layout_height="70dp"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     android:orientation="horizontal">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
         <ImageView
             android:id="@+id/img_dish"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
+<<<<<<< HEAD
             android:layout_marginStart="30dp"/>
+=======
+            android:layout_marginStart="30dp"
+            android:src="@drawable/sample_dish"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
         <TextView
             android:id="@+id/tx_dish"
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_toEndOf="@id/img_dish"
+<<<<<<< HEAD
             android:layout_marginStart="10dp"/>
 
         <ImageButton
@@ -24,12 +38,29 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
+=======
+            android:text="sample dish"
+            android:textSize="20dp"
+            android:padding="20dp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <ImageView
+            android:id="@+id/btn_remove"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="30dp"
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_remove_circle_24"
             android:contentDescription="Remove Button"
+<<<<<<< HEAD
             android:foregroundGravity="center"/>
+=======
+            android:foregroundGravity="center" />
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
     </RelativeLayout>
 
 

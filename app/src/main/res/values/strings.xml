@@ -92,4 +92,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="day_of_the_week">Day of the week</string>
+<<<<<<< HEAD
+=======
+    <string name="default_web_client_id">1003585528776-3bsvdedel3rme5ifu55n7ts7mk932s0v.apps.googleusercontent.com</string>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 </resources>

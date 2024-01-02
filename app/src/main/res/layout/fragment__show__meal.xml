@@ -60,7 +60,12 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+<<<<<<< HEAD
             android:text="Trung Chien"
+=======
+            android:text="Sample dish"
+            android:textColor="@color/black"
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
             android:textSize="30dp"
             android:textStyle="bold"
             />
@@ -69,14 +74,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/sample_dish"
+<<<<<<< HEAD
             android:background="@drawable/fading_effect"
             android:layout_gravity="center"/>
+=======
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_ingredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             />
+=======
+            android:layout_marginTop="20dp"/>
+>>>>>>> b4d7492124c5426f4e2461dad1dab0a0bf077132
 
     </LinearLayout>
 
