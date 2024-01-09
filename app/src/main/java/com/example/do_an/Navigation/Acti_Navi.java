@@ -1,20 +1,18 @@
-package com.example.do_an;
+package com.example.do_an.Navigation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.do_an.R;
-import com.example.do_an.ViewPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class Home extends AppCompatActivity {
+public class Acti_Navi extends AppCompatActivity {
 
     private ViewPager mViewPager;
     private BottomNavigationView mBottomNavigationView;

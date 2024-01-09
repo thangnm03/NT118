@@ -1,4 +1,4 @@
-package com.example.do_an;
+package com.example.do_an.Authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.do_an.Navigation.Acti_Navi;
+import com.example.do_an.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -185,7 +186,7 @@ public class Register extends AppCompatActivity {
         backImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Register.this, MainActivity.class);
+                Intent intent = new Intent(Register.this, Login.class);
                 startActivity(intent);
             }
         });

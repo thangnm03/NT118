@@ -1,4 +1,4 @@
-package com.example.do_an;
+package com.example.do_an.Authentication;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.do_an.Navigation.Acti_Navi;
+import com.example.do_an.R;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -31,7 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
     private Button loginButton, signupButton;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
 
         emailEditText = findViewById(R.id.et_mail);
         passwordEditText = findViewById(R.id.et_pwd);
@@ -78,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!user.isEmpty() && !password.isEmpty()) {
                     firebaseAuth.signInWithEmailAndPassword(user, password)
-                            .addOnCompleteListener( MainActivity.this, new OnCompleteListener<AuthResult>() {
+                            .addOnCompleteListener( Login.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         FirebaseUser user = firebaseAuth.getCurrentUser();
-                                        Intent intent = new Intent(MainActivity.this, Acti_Navi.class);
+                                        Intent intent = new Intent(Login.this, Acti_Navi.class);
 
                                         startActivity(intent);
                                     } else {
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
+                Intent intent = new Intent(Login.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -157,12 +158,12 @@ public class MainActivity extends AppCompatActivity {
                             map.put("profile",user.getPhotoUrl()).toString();
 
                             database.getReference().child("users").child(user.getUid()).setValue(map);
-                            Intent intent = new Intent(MainActivity.this, Acti_Navi.class);
+                            Intent intent = new Intent(Login.this, Acti_Navi.class);
                             startActivity(intent);
                         }
 
                         else {
-                            Toast.makeText(MainActivity.this,"fail",Toast.LENGTH_SHORT);
+                            Toast.makeText(Login.this,"fail",Toast.LENGTH_SHORT);
                         }
                     }
                 });
@@ -172,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
-            Intent intent = new Intent(MainActivity.this, Acti_Navi.class);
+            Intent intent = new Intent(Login.this, Acti_Navi.class);
             startActivity(intent);
             finish();
         }
