@@ -1,54 +1,62 @@
 <!-- item_layout.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/background_activity">
+    android:background="@drawable/background_activity"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:maxLines="1"
         android:ellipsize="end"
         android:text="Sample dish"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColor="#DE3163"/>
+        android:layout_marginRight="20dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
         android:maxLines="2"
         android:ellipsize="end"
         android:text="sample tip"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="7dp"
+        >
 
-        <ImageView
+        <ToggleButton
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/android_favorite"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/toggle_selector"
+            android:onClick="onCustomToggleClick"
+            android:textOff=""
+            android:textOn="" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="0"
             android:textSize="20dp"
-            android:layout_marginTop="5dp"
-            />
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 

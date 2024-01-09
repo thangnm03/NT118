@@ -1,4 +1,4 @@
-package com.example.do_an;
+package com.example.do_an.Home;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.do_an.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Home2#newInstance} factory method to
+ * Use the {@link Fragment_Search_Categorys#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Home2 extends Fragment {
+public class Fragment_Search_Categorys extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class Home2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Home2() {
+    public Fragment_Search_Categorys() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class Home2 extends Fragment {
      * @return A new instance of fragment Home2.
      */
     // TODO: Rename and change types and number of parameters
-    public static Home2 newInstance(String param1, String param2) {
-        Home2 fragment = new Home2();
+    public static Fragment_Search_Categorys newInstance(String param1, String param2) {
+        Fragment_Search_Categorys fragment = new Fragment_Search_Categorys();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class Home2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home2, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 }

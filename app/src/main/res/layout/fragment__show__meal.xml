@@ -5,9 +5,9 @@
     android:layout_height="match_parent">
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".Fragment_Show_Meal"
+        tools:context=".Home.Info_Dish.Fragment_Show_Meal"
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:id="@+id/ibtn_share"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="10dp"
                 android:layout_toStartOf="@id/ibtn_addplan"
                 android:background="@android:color/transparent"
                 android:contentDescription="Share Button"
@@ -39,7 +39,7 @@
                 android:src="@drawable/meal_plan_change"
                 android:background="@android:color/transparent"
                 android:layout_toStartOf="@id/tog_save"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="10dp"
                 android:contentDescription="Add plan button"/>
 
             <ToggleButton
@@ -73,8 +73,40 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"/>
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="See all tips"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No tips yet"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click to add your tip"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_steps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"/>

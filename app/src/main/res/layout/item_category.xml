@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/tv_category"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1.5"
@@ -17,14 +18,18 @@
             android:paddingTop="5dp"/>
 
         <TextView
+            android:id="@+id/tv_see_all"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:gravity="center"
-            android:text="See more ->"
-            android:textColor="@color/bright_pink" />
+            android:text="See All"
+            android:textColor="@color/bright_pink"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_dish_20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

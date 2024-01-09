@@ -6,7 +6,7 @@
     android:weightSum="5">
 
     <TextView
-        android:id="@+id/tx_step"
+        android:id="@+id/tv_step_number"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -19,7 +19,7 @@
         />
 
     <TextView
-        android:id="@+id/tx_content"
+        android:id="@+id/tv_Description"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="4"
