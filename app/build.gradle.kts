@@ -47,5 +47,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation ("org.apache.commons:commons-lang3:3.12.0")
+    implementation ("com.squareup.picasso:picasso:2.8")
+    implementation ("androidx.lifecycle:lifecycle-livedata:2.3.1")
+
 
 }

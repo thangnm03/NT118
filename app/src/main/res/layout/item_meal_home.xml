@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardCornerRadius="20dp">
+        <ImageView
+            android:id="@+id/img_meal_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Image Dish"
+            android:src="@drawable/preview" />
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+
+        <TextView
+            android:id="@+id/name_dish_home"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Sample Dish"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck"
+            android:layout_marginTop="3dp"/>
+
+        <ToggleButton
+            android:id="@+id/toggle_fav_home"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/name_dish_home"
+            android:background="@drawable/toggle_selector"
+            android:onClick="onCustomToggleClick"
+            android:textOff=""
+            android:textOn=""
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+</LinearLayout>
