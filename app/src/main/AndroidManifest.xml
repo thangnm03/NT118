@@ -19,6 +19,8 @@
         <activity
             android:name=".Navigation.Acti_Navi"
             android:exported="false" />
+        <activity android:name=".fragment_meal_plan" />
+        <activity android:name=".item_dish" />
         <activity
             android:name=".Authentication.Login"
             android:exported="true">
