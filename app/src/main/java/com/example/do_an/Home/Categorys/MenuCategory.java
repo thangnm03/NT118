@@ -2,13 +2,13 @@ package com.example.do_an.Home.Categorys;
 
 import com.example.do_an.Home.Categorys.Category.FoodItem;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MenuCategory {
     private String categoryName;
-    private ArrayList<FoodItem> foodItems;
+    private List<FoodItem> foodItems;
 
-    public MenuCategory(String categoryName, ArrayList<FoodItem> foodItems) {
+    public MenuCategory(String categoryName, List<FoodItem> foodItems) {
         this.categoryName = categoryName;
         this.foodItems = foodItems;
     }
@@ -21,11 +21,11 @@ public class MenuCategory {
         this.categoryName = categoryName;
     }
 
-    public ArrayList<FoodItem> getFoodItems() {
+    public List<FoodItem> getFoodItems() {
         return foodItems;
     }
 
-    public void setFoodItems(ArrayList<FoodItem> foodItems) {
+    public void setFoodItems(List<FoodItem> foodItems) {
         this.foodItems = foodItems;
     }
 }

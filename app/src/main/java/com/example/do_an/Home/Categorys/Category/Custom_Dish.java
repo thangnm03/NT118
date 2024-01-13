@@ -1,5 +1,6 @@
 package com.example.do_an.Home.Categorys.Category;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,18 @@ import android.widget.ToggleButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Custom_Dish extends RecyclerView.Adapter<Custom_Dish.ViewHolder> {
 
-    private ArrayList<FoodItem> mData;
+    private List<FoodItem> mData;
 
-    public Custom_Dish(ArrayList<FoodItem> data) {
-        this.mData = data;
+    public void setmData(List<FoodItem> mData) {
+        this.mData = mData;
+        notifyDataSetChanged();
     }
 
     // ViewHolder cho item
@@ -29,15 +33,15 @@ public class Custom_Dish extends RecyclerView.Adapter<Custom_Dish.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textView_Name = itemView.findViewById(R.id.img_meal);
-            imageView_Dish = itemView.findViewById(R.id.tx_dish);
-            toggleButton_fav = itemView.findViewById(R.id.toggle_fav);
+            textView_Name = itemView.findViewById(R.id.name_dish_home);
+            imageView_Dish = itemView.findViewById(R.id.img_meal_home);
+            toggleButton_fav = itemView.findViewById(R.id.toggle_fav_home);
         }
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_meal, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_meal_home, parent, false);
         return new ViewHolder(view);
     }
 
@@ -47,10 +51,8 @@ public class Custom_Dish extends RecyclerView.Adapter<Custom_Dish.ViewHolder> {
         FoodItem item = mData.get(position);
 
         holder.textView_Name.setText(item.getFoodName());
-        holder.imageView_Dish.setVisibility(View.VISIBLE);
 
-        //holder.toggleButton_fav.setVisibility(View.VISIBLE);
-
+        Picasso.get().load(item.getImageResource()+"/preview").into(holder.imageView_Dish);
     }
 
     @Override

@@ -6,6 +6,7 @@
     tools:context=".Home.Categorys.Fragment_Categorys">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 </FrameLayout>
