@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="195dp"
+    android:layout_width="190dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
+    android:layout_margin="10dp"
     >
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="190dp"
         app:cardCornerRadius="20dp">
         <ImageView
             android:id="@+id/img_meal"
@@ -20,7 +17,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:contentDescription="Image Dish"
-            android:src="@drawable/sample_dish" />
+            android:src="@drawable/preview" />
     </androidx.cardview.widget.CardView>
 
         <RelativeLayout
@@ -39,7 +36,7 @@
 
             <ToggleButton
                 android:id="@+id/toggle_fav"
-                android:layout_width="50dp"
+                android:layout_width="48dp"
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/name_dish"
                 android:background="@drawable/toggle_selector"

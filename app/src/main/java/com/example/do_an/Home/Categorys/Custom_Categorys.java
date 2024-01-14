@@ -1,5 +1,6 @@
 package com.example.do_an.Home.Categorys;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,21 @@ import com.example.do_an.Home.Categorys.Category.Custom_Dish;
 import com.example.do_an.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Custom_Categorys extends RecyclerView.Adapter<Custom_Categorys.ViewHolder> {
 
-    private ArrayList<MenuCategory> mData;
+    Context context;
+    private List<MenuCategory> mData;
 
-    public Custom_Categorys(ArrayList<MenuCategory> data) {
-        this.mData = data;
+    public Custom_Categorys (Context context){
+        this.context=context;
+    }
+    public void setmData(List<MenuCategory> mData) {
+        this.mData = mData;
+        notifyDataSetChanged();
     }
 
-    // ViewHolder cho item
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textView_Category;
         public TextView textView_See_All;
@@ -47,12 +53,12 @@ public class Custom_Categorys extends RecyclerView.Adapter<Custom_Categorys.View
         MenuCategory item = mData.get(position);
 
         holder.textView_Category.setText(item.getCategoryName());
-        holder.textView_See_All.setVisibility(View.VISIBLE);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(holder.list_20.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         holder.list_20.setLayoutManager(layoutManager);
 
-        Custom_Dish customDishAdapter = new Custom_Dish(item.getFoodItems());
+        Custom_Dish customDishAdapter = new Custom_Dish();
+        customDishAdapter.setmData(item.getFoodItems());
         holder.list_20.setAdapter(customDishAdapter);
 
     }

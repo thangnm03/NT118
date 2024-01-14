@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".Home.Info_Dish.Fragment_Show_Meal"
         android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-            <ImageButton
-                android:id="@+id/ibtn_back"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/back_arrow_icon"
-                android:background="@android:color/transparent"
-                android:layout_alignParentStart="true"
-                android:contentDescription="Back button"/>
-
-            <ImageButton
-                android:id="@+id/ibtn_share"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@id/ibtn_addplan"
-                android:background="@android:color/transparent"
-                android:contentDescription="Share Button"
-                android:src="@drawable/share_svgrepo_com" />
-
-            <ImageButton
-                android:id="@+id/ibtn_addplan"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/meal_plan_change"
-                android:background="@android:color/transparent"
-                android:layout_toStartOf="@id/tog_save"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="Add plan button"/>
-
-            <ToggleButton
-                android:id="@+id/tog_save"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/toggle_selector"
-                android:onClick="onCustomToggleClick"
-                android:textOff=""
-                android:textOn=""
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="10dp"/>
-        </RelativeLayout>
 
         <TextView
             android:id="@+id/tx_dish"
@@ -73,28 +30,49 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_ingredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:nestedScrollingEnabled="false"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tips"
+            android:textSize="20dp"
             android:layout_marginTop="20dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="See all tips"/>
+                android:text="See all tips"
+                android:layout_marginTop="5dp"
+                android:textColor="#DE3163"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,11 +83,19 @@
                 android:text="Click to add your tip"/>
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_steps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="10dp"
+            android:nestedScrollingEnabled="false"/>
 
     </LinearLayout>
 

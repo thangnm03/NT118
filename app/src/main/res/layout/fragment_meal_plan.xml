@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:orientation="vertical">
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -61,47 +62,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginTop="20dp">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp">
-                        <TextView
-                            android:layout_width="200dp"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentStart="true"
-                            android:layout_marginStart="20dp"
-                            android:text="Bữa sáng"
-                            android:padding="10dp"
-                            android:textSize="20dp"/>
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="30dp"
-                            android:background="@android:color/transparent"
-                            android:text="+ Thêm món ăn"
-                            android:textColor="@android:color/holo_blue_light"
-                            android:textSize="16dp"/>
-                    </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recy_break"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="20dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -126,8 +86,55 @@
                             android:layout_marginEnd="30dp"
                             android:background="@android:color/transparent"
                             android:text="+ Thêm món ăn"
+                            android:onClick="add"
+                            android:id="@+id/addDishes"
                             android:textColor="@android:color/holo_blue_light"
                             android:textSize="16dp"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recy_break"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    tool:lisitem= "@layout/item_meal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="20dp"
+                            android:text="Bữa trưa"
+                            android:padding="10dp"
+                            android:textSize="20dp"/>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp"
+                            android:background="@android:color/transparent"
+                            android:text="+ Thêm món ăn"
+                            android:onClick="add"
+                            android:id="@+id/addDishes"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="16dp"
+                            tool:ignore="DuplicateIds" />
                     </RelativeLayout>
 
 
@@ -142,48 +149,51 @@
                     android:layout_marginTop="10dp"/>
             </LinearLayout>
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="20dp"
-                        android:text="Bữa sáng"
-                        android:padding="10dp"
-                        android:textSize="20dp"/>
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="30dp"
-                        android:background="@android:color/transparent"
-                        android:text="+ Thêm món ăn"
-                        android:textColor="@android:color/holo_blue_light"
-                        android:textSize="16dp"/>
-                </RelativeLayout>
-
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recy_dinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="10dp"
-                />
-        </LinearLayout>
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="20dp"
+                            android:text="Bữa tối"
+                            android:padding="10dp"
+                            android:textSize="20dp"/>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp"
+                            android:background="@android:color/transparent"
+                            android:text="+ Thêm món ăn"
+                            android:onClick="add"
+                            android:id="@+id/addDishes"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="16dp"
+                            tool:ignore="DuplicateIds" />
+                    </RelativeLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recy_dinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
