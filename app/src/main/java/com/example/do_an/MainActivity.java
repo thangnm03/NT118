@@ -1,15 +1,18 @@
 package com.example.do_an;
 
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
     private Button loginButton, signupButton;
-    private TextView loginfailTextView;
+    private TextView loginfailTextView, forgotfailTextView;
     private ImageButton googlebutton;
+    private LinearLayout layoutForgotPassword;
     private FirebaseDatabase database;
     private FirebaseAuth firebaseAuth;
     private GoogleSignInClient googleSignInClient;
@@ -51,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.et_mail);
         passwordEditText = findViewById(R.id.et_pwd);
         loginButton = findViewById(R.id.btn_login);
-        loginfailTextView =findViewById(R.id.login_fail);
+        loginfailTextView = findViewById(R.id.login_fail);
+        forgotfailTextView = findViewById(R.id.forgot_password_fail);
         signupButton = findViewById(R.id.btn_register);
         googlebutton = findViewById(R.id.ibtn_google);
+        layoutForgotPassword = findViewById(R.id.forgot_password);
 
         firebaseAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -115,6 +121,13 @@ public class MainActivity extends AppCompatActivity {
                 googleSignIn();
             }
         });
+
+        layoutForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickForgotPassword();
+            }
+        });
     }
 
     private void googleSignIn() {
@@ -122,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent,RC_SIGN_IN);
 
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -139,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, e.getMessage(),Toast.LENGTH_SHORT);
             }
         }
-
 
     }
 
@@ -162,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         else {
-                            Toast.makeText(MainActivity.this,"fail",Toast.LENGTH_SHORT);
+                            Toast.makeText(MainActivity.this,"fail",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -177,5 +191,28 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+
+    private void onClickForgotPassword(){
+        String user =emailEditText.getText().toString();
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String emailAddress = user;
+
+        if(!user.isEmpty()){
+            auth.sendPasswordResetEmail(emailAddress)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(MainActivity.this, "Email sent", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        } else{
+            forgotfailTextView.setVisibility(View.VISIBLE);
+            passwordEditText.setText("");
+        }
+    }
+
 
 }
