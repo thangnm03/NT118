@@ -30,7 +30,7 @@ public class saved_recipesAdapter extends RecyclerView.Adapter<saved_recipesAdap
     @NonNull
     @Override
     public saved_recipesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recipes, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_saved_recipes, parent, false);
         return new saved_recipesViewHolder(view);
     }
 
