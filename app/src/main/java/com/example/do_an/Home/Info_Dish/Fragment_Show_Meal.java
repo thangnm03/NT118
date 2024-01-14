@@ -8,42 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.do_an.Home.Categorys.Category.FoodItem;
 import com.example.do_an.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Show_Meal#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Fragment_Show_Meal extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String ARG_IDFood = "ID_Food";
+    private String id_meal;
 
     public Fragment_Show_Meal() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_Show_Meal.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Fragment_Show_Meal newInstance(String param1, String param2) {
-        Fragment_Show_Meal fragment = new Fragment_Show_Meal();
+
+    public static Fragment_Show_Meal newInstance(String id) {
+        Fragment_Show_Meal fragment  = new Fragment_Show_Meal();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_IDFood, id);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,8 +34,7 @@ public class Fragment_Show_Meal extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            id_meal = getArguments().getString(ARG_IDFood);
         }
     }
 
