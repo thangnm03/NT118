@@ -3,11 +3,16 @@ package com.example.do_an.Navigation;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.do_an.Home.Categorys.Category.Custom_Dish;
+import com.example.do_an.Home.Categorys.Category.FoodItem;
+import com.example.do_an.Home.Fragment_Home;
+import com.example.do_an.Home.Info_Dish.Fragment_Show_Meal;
 import com.example.do_an.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -33,16 +38,23 @@ public class Acti_Navi extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                MenuItem menuItem;
+                switch (position) {
                     case 0:
-                        mBottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
+                        menuItem = mBottomNavigationView.getMenu().findItem(R.id.home);
                         break;
                     case 1:
-                        mBottomNavigationView.getMenu().findItem(R.id.meal_plan).setChecked(true);
+                        menuItem = mBottomNavigationView.getMenu().findItem(R.id.meal_plan);
                         break;
                     case 2:
-                        mBottomNavigationView.getMenu().findItem(R.id.profile).setChecked(true);
+                        menuItem = mBottomNavigationView.getMenu().findItem(R.id.profile);
                         break;
+                    default:
+                        return;
+                }
+
+                if (!menuItem.isChecked()) {
+                    menuItem.setChecked(true);
                 }
             }
 

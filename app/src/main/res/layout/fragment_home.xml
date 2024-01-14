@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/fragment_container">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,6 +78,53 @@
             android:visibility="gone"
             android:background="@android:color/transparent"/>
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/vg_show_meal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/ibtn_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_arrow_icon"
+            android:background="@android:color/transparent"
+            android:layout_alignParentStart="true"
+            android:contentDescription="Back button"/>
+
+        <ImageButton
+            android:id="@+id/ibtn_share"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/ibtn_addplan"
+            android:background="@android:color/transparent"
+            android:contentDescription="Share Button"
+            android:src="@drawable/share_svgrepo_com" />
+
+        <ImageButton
+            android:id="@+id/ibtn_addplan"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/meal_plan_change"
+            android:background="@android:color/transparent"
+            android:layout_toStartOf="@id/tog_save"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="Add plan button"/>
+
+        <ToggleButton
+            android:id="@+id/tog_save"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/toggle_selector"
+            android:onClick="onCustomToggleClick"
+            android:textOff=""
+            android:textOn=""
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"/>
+    </RelativeLayout>
+
 
     <FrameLayout
         android:id="@+id/frame_home"
