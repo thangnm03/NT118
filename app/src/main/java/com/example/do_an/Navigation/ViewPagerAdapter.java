@@ -11,6 +11,13 @@ import com.example.do_an.Profile.Fragment_profile;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
+    private String id_meal;
+    private OnItemClickListener clickListener;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);

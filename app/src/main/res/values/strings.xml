@@ -92,5 +92,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="day_of_the_week">Day of the week</string>
+    <string name="Fragment_saved_recipes">Fragment saved recipes</string>
+    <string name="Fragment_activity">Fragment activity</string>
     <string name="default_web_client_id">1003585528776-3bsvdedel3rme5ifu55n7ts7mk932s0v.apps.googleusercontent.com</string>
 </resources>

@@ -22,7 +22,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.do_an.Home.Categorys.Category.Custom_Dish;
+import com.example.do_an.Home.Categorys.Category.FoodItem;
 import com.example.do_an.Home.Categorys.Fragment_Categorys;
+import com.example.do_an.Home.Info_Dish.Fragment_Show_Meal;
+import com.example.do_an.Home.Search.Fragment_Search_History;
+import com.example.do_an.Home.Search.Fragment__Search_Result;
+import com.example.do_an.Home.Search.SearchHistoryDbHelper;
 import com.example.do_an.R;
 
 public class Fragment_Home extends Fragment {
@@ -31,11 +37,11 @@ public class Fragment_Home extends Fragment {
 
     private ImageButton imgExit, imgFilter, imgClear;
     private EditText searchBar;
+    SearchHistoryDbHelper dbHelper ;
 
     private CardView cardView;
     private FrameLayout frameHome;
 
-    //final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 
     private String mParam1;
     private String mParam2;
@@ -97,10 +103,28 @@ public class Fragment_Home extends Fragment {
                     cardViewParams.leftMargin = 0;
                     cardViewParams.rightMargin = 10;
                     cardView.setLayoutParams(cardViewParams);
+                    replaceFragment(new Fragment_Search_History());
                 }
 
             }
         });
+
+        searchBar.setOnEditorActionListener((textView, actionId, keyEvent) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                String searchText = searchBar.getText().toString().trim();
+                if (!searchText.isEmpty()) {
+                    dbHelper = new SearchHistoryDbHelper(getContext());
+                    dbHelper.insertSearchTerm(searchText);
+                    searchBar.clearFocus();
+                    hideKeyboard();
+                    replaceFragment(Fragment__Search_Result.newInstance(searchBar.getText().toString()));
+
+                }
+                return true;
+            }
+            return false;
+        });
+
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
@@ -120,9 +144,9 @@ public class Fragment_Home extends Fragment {
 
         });
 
-        // Gắn sự kiện cho nút xóa
         imgClear.setOnClickListener(v -> {
             searchBar.setText("");
+            searchBar.hasFocus();
             imgClear.setVisibility(View.GONE);
         });
 
@@ -131,16 +155,10 @@ public class Fragment_Home extends Fragment {
             imgClear.callOnClick();
             hideKeyboard();
 
-
-
             replaceFragment(new Fragment_Categorys());
         });
 
-        // Gắn sự kiện cho nút lọc
         imgFilter.setOnClickListener(v -> {
-            // Hiển thị fragment mới (thay thế bằng fragment khác nếu cần)
-            //replaceFragment(new YourFilterFragment());
-            // Ẩn/hiển thị các nút tùy thuộc vào logic của bạn
             imgExit.setVisibility(View.VISIBLE);
             imgFilter.setVisibility(View.VISIBLE);
             imgClear.setVisibility(View.VISIBLE);
@@ -156,12 +174,13 @@ public class Fragment_Home extends Fragment {
         }
     }
 
-    private void replaceFragment(Fragment fragment) {
+    public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_home, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 
 }
