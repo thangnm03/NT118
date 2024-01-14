@@ -169,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
                             map.put("id",user.getUid());
                             map.put("name",user.getDisplayName());
                             map.put("profile",user.getPhotoUrl()).toString();
-
                             database.getReference().child("users").child(user.getUid()).setValue(map);
                             Intent intent = new Intent(MainActivity.this, Acti_Navi.class);
                             startActivity(intent);
@@ -193,12 +192,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onClickForgotPassword(){
-        String user =emailEditText.getText().toString();
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        String emailAddress = user;
+        String emailAddress = emailEditText.getText().toString();;
 
-        if(!user.isEmpty()){
+        if(!emailAddress.isEmpty()){
             auth.sendPasswordResetEmail(emailAddress)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
