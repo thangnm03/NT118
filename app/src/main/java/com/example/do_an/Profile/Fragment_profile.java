@@ -10,15 +10,21 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.do_an.Authentication.Login;
 import com.example.do_an.R;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Fragment_profile extends Fragment {
 
+    private TabLayout mTabLayout;
 
+    private ViewPager mViewPager;
+    
     public Fragment_profile() {
         // Required empty public constructor
     }
@@ -65,6 +71,14 @@ public class Fragment_profile extends Fragment {
             }
         });
 
+        mTabLayout = view.findViewById(R.id.tab_layout);
+        mViewPager = view.findViewById(R.id.view_pager);
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        mViewPager.setAdapter(viewPagerAdapter);
+
+        mTabLayout.setupWithViewPager(mViewPager);
+        
         return view;
 
     }
